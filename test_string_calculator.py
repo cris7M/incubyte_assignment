@@ -12,10 +12,16 @@ class TestStringCalculator(unittest.TestCase):
     def test_single_number(self):
         self.assertEqual(add("1"), 1)
 
-    # handle multiple numbers
+    # handle two numbers
     def test_two_number(self):
         self.assertEqual(add("1,2"),3)
         self.assertEqual(add("10,20"),30)
+
+    # handle multiple numbers
+    def test_multiple_number(self):
+        self.assertEqual(add("1,2,3,4,5"),15)
+        self.assertEqual(add("10,20,30,40,50"),150)
         
+
 if __name__ == "__main__":
     unittest.main()
