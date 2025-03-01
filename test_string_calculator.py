@@ -27,6 +27,11 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(add("1\n2,3"),6)
         self.assertEqual(add("10\n20,30"),60)
 
+    # Support different delimiters
+    def test_custom_delimeter(self):
+        self.assertEqual(add("//;\n1;2"),3)
+        self.assertEqual(add("//|\n1|2|3"),6)
+
 
 if __name__ == "__main__":
     unittest.main()
