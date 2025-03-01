@@ -7,7 +7,6 @@ class TestStringCalculator(unittest.TestCase):
     def test_empty_string(self):
         self.assertEqual(add(""), 0)
 
-
     # handle a single number
     def test_single_number(self):
         self.assertEqual(add("1"), 1)
@@ -31,6 +30,12 @@ class TestStringCalculator(unittest.TestCase):
     def test_custom_delimeter(self):
         self.assertEqual(add("//;\n1;2"),3)
         self.assertEqual(add("//|\n1|2|3"),6)
+
+    # handle negative number
+    def test_negative_numbers(self):
+        with self.assertRaises(ValueError) as context:
+            add("1,-2,3,-4")
+        self.assertEqual(str(context.exception), "Negative numbers not allowed: -2, -4")
 
 
 if __name__ == "__main__":
