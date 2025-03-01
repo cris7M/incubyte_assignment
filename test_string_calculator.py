@@ -21,7 +21,12 @@ class TestStringCalculator(unittest.TestCase):
     def test_multiple_number(self):
         self.assertEqual(add("1,2,3,4,5"),15)
         self.assertEqual(add("10,20,30,40,50"),150)
-        
+
+    # handle new line as delimeter 
+    def test_newline_as_delemeter(self):
+        self.assertEqual(add("1\n2,3"),6)
+        self.assertEqual(add("10\n20,30"),60)
+
 
 if __name__ == "__main__":
     unittest.main()
